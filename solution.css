@@ -1,0 +1,23 @@
+The issue is often caused by specificity problems.  To resolve this, it's important to ensure that the `:hover` selector has sufficient specificity to override any other styles that might be applied to the `.inner-div` element.
+
+Here's a corrected version:
+
+```css
+.outer-div {
+  width: 100px;
+  height: 100px;
+  background-color: lightblue;
+}
+
+.outer-div:hover .inner-div {
+  background-color: lightcoral !important; /*Added !important to force the hover style to apply*/
+}
+
+.inner-div {
+  width: 50px;
+  height: 50px;
+  background-color: lightgreen;
+}
+```
+
+The `!important` flag is used here to ensure that the hover style takes precedence.  While generally not recommended for overuse, in situations like this where specificity is proving difficult to manage, it provides a direct solution.  A more robust solution may involve more careful analysis of CSS specificity and cascade order within your stylesheet.
