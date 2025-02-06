@@ -1,0 +1,25 @@
+The following CSS code snippet demonstrates an unusual issue where the `:hover` pseudo-class is not working correctly on a nested element.  The expected behavior is that the inner `<div>` should change color when hovering over the outer `<div>`, but this is not happening. 
+
+```css
+.outer-div {
+  width: 100px;
+  height: 100px;
+  background-color: lightblue;
+}
+
+.outer-div:hover .inner-div {
+  background-color: lightcoral;
+}
+
+.inner-div {
+  width: 50px;
+  height: 50px;
+  background-color: lightgreen;
+}
+```
+
+```html
+<div class="outer-div">
+  <div class="inner-div"></div>
+</div>
+```
